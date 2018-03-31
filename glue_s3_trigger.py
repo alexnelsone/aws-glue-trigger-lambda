@@ -44,9 +44,7 @@ def is_empty(any_structure):
 '''#This is the main handler for lambda function'''
 def lambda_handler(event, context):
     
-    # for local testing
-    event = "{u'Records': [{u'eventVersion': u'2.0', u'eventTime': u'2018-02-22T21:05:17.065Z', u'requestParameters': {u'sourceIPAddress': u'10.17.84.114'}, u's3': {u'configurationId': u'ae6af604-78ce-4892-bf88-4c4ab9656bdf', u'object': {u'eTag': u'37f87410402060bc06d72abbbc5c4e64', u'sequencer': u'005A8F308CF49526A7', u'key': u'sftp-incoming/np/testuser1/good_25_csv_pipe.csv', u'size': 6831}, u'bucket': {u'arn': u'arn:aws:s3:::np-medda-root-us-east-1', u'name': u'np-medda-root-us-east-1', u'ownerIdentity': {u'principalId': u'A29QZDIGW6XZOP'}}, u's3SchemaVersion': u'1.0'}, u'responseElements': {u'x-amz-id-2': u'ni1vmbeAGOzw3kSPDXt6CkD9BgsYbmxKuxs5z9tAcBGLijD77uNxh8+kx5JmKnu0V6AfzVJ2DFc=', u'x-amz-request-id': u'F63B4DB48BD1BF61'}, u'awsRegion': u'us-east-1', u'eventName': u'ObjectCreated:Put', u'userIdentity': {u'principalId': u'AWS:AROAJE472CMROXCZMLGPU:i-00721247b6bca1809'}, u'eventSource': u'aws:s3'}]}"
-    event = ast.literal_eval(event)
+   
     
     sourceBucketName = event['Records'][0]['s3']['bucket']['name']
     sourceKeyName = event['Records'][0]['s3']['object']['key']
